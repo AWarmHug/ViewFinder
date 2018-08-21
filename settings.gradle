@@ -1,1 +1,1 @@
-include ':app', ':finder', ':finderapt-annotations'
+include ':app', ':finder', ':finder-apt', ':finder-apt-processor', ':finder-apt-annotations'

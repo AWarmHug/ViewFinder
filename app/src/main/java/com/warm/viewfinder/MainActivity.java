@@ -1,5 +1,6 @@
 package com.warm.viewfinder;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -9,8 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.warm.finder.ViewFinder;
-import com.warm.finder.annotation.Id;
-import com.warm.finder.annotation.OnClick;
+import com.warm.finder.annotations.Id;
+import com.warm.finder.annotations.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity_TAG";
@@ -30,8 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(values = {R.id.bt1, R.id.bt2})
     private void onTvClick(View view) {
-        if (view instanceof Button) {
-            Toast.makeText(this, "点击了" + ((Button) view).getText(), Toast.LENGTH_SHORT).show();
+        switch (view.getId()) {
+            case R.id.bt1:
+                if (view instanceof Button) {
+                    Toast.makeText(this, "点击了" + ((Button) view).getText(), Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.bt2:
+                startActivity(new Intent(this, AptActivity.class));
+                break;
         }
+
     }
 }

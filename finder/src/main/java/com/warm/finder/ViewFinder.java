@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.support.v4.util.ArrayMap;
 import android.view.View;
 
-import com.warm.finder.annotation.Id;
-import com.warm.finder.annotation.OnClick;
+import com.warm.finder.annotations.Id;
+import com.warm.finder.annotations.OnClick;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
