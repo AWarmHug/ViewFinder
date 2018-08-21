@@ -1,0 +1,1 @@
+include ':app', ':finder', ':finderapt-annotations'
