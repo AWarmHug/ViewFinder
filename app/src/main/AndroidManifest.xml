@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".MyApp"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -16,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AptActivity"></activity>
+        <activity android:name=".AptActivity"/>
+        <activity android:name=".Apt2Activity"/>
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>

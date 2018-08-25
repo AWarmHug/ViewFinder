@@ -1,7 +1,5 @@
 package com.warm.finder_apt;
 
-import android.app.Activity;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -11,9 +9,10 @@ import java.lang.reflect.Method;
  * 描述：
  */
 public class ViewFinder {
-    public static void find(Activity activity) {
+
+    public static void find(Object activity) {
         try {
-            Class<?> viewFinder = Class.forName(activity.getClass().getName() + "_ViewFinder");
+            Class<?> viewFinder = activity.getClass().getClassLoader().loadClass(activity.getClass().getName() + "_ViewFinder");
             Method method = viewFinder.getMethod("find", activity.getClass());
             method.invoke(viewFinder.newInstance(), activity);
         } catch (ClassNotFoundException e) {
